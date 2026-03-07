@@ -49,35 +49,33 @@ Each library contribution should follow this folder layout:
 
 ```
 libraries/
-└── freebasic-1-10-1/                    ← FB version this archive targets
-    └── libname/
-        ├── README.md                    ← required (see template below)
-        └── libname-x.y.z/               ← one folder per library version
-            │
-            ├── inc/                     ← shared: .bi header(s), all platforms
-            │   └── (mirrors FB /inc/ layout exactly, e.g. inc/SDL2/SDL.bi)
-            ├── examples/                ← shared: .bas example files
-            ├── docs/                    ← shared: manual, PDF, CHM, HTML
-            │
-            ├── win32/                   ← platform-specific binaries
-            │   ├── bin/                 ← .dll
-            │   └── lib/                 ← .lib (import or static)
-            ├── win64/
-            │   ├── bin/
-            │   └── lib/
-            ├── linux32/
-            │   └── lib/                 ← .so / .a
-            └── linux64/
-                └── lib/
-            │
-            ├── libname-x.y.z-win32.zip      ← bundle: inc/ + examples/ + docs/ + win32/
-            ├── libname-x.y.z-win64.zip      ← bundle: inc/ + examples/ + docs/ + win64/
-            ├── libname-x.y.z-linux32.tar.gz ← bundle: inc/ + examples/ + docs/ + linux32/
-            └── libname-x.y.z-linux64.tar.gz ← bundle: inc/ + examples/ + docs/ + linux64/
+  └── libname/
+      ├── README.md                    ← required (see template below)
+      └── libname-x.y.z/               ← one folder per library version
+          │
+          ├── inc/                     ← shared: .bi header(s), all platforms
+          │   └── (mirrors FB /inc/ layout exactly, e.g. inc/SDL2/SDL.bi)
+          ├── examples/                ← shared: .bas example files
+          ├── docs/                    ← shared: manual, PDF, CHM, HTML
+          │
+          ├── win32/                   ← platform-specific binaries
+          │   ├── bin/                 ← .dll
+          │   └── lib/                 ← .lib (import or static)
+          ├── win64/
+          │   ├── bin/
+          │   └── lib/
+          ├── linux32/
+          │   └── lib/                 ← .so / .a
+          └── linux64/
+              └── lib/
+          │
+          ├── libname-x.y.z-win32.zip      ← bundle: inc/ + examples/ + docs/ + win32/
+          ├── libname-x.y.z-win64.zip      ← bundle: inc/ + examples/ + docs/ + win64/
+          ├── libname-x.y.z-linux32.tar.gz ← bundle: inc/ + examples/ + docs/ + linux32/
+          └── libname-x.y.z-linux64.tar.gz ← bundle: inc/ + examples/ + docs/ + linux64/
 ```
 
 **Important rules:**
-- The `freebasic-1-10-1/` root folder ties every bundle to the exact FB release its headers belong to. When a future FB release ships with new or updated headers, a new sibling folder (e.g. `freebasic-1-10-2/`) is created — no existing content is touched.
 - `inc/` **must mirror the exact folder structure** of the FreeBASIC 1.10.1 `/inc/` folder. If FB ships the header as `inc/SDL2/SDL.bi`, your bundle must use the same path. This prevents confusion and makes drop-in installation straightforward.
 - Some libraries have platform-specific sub-headers (e.g. `inc/crt/win32/` vs `inc/crt/linux/`). In those cases simply include only the relevant sub-headers inside the platform folder's `inc/`, matching the FB structure.
 - `examples/` and `docs/` are platform-agnostic and never duplicated inside platform folders.
@@ -130,8 +128,8 @@ If you cannot determine the version from the header alone, note it as `❓` and 
 ## Submitting a PR
 
 1. Fork the repository
-2. Create a branch named after what you're adding, e.g. `fb-1-10-1/add-sqlite3` or `fb-1-10-1/fix-curl-version`
-3. Add your files under `libraries/freebasic-1-10-1/libname/` following the bundle structure above
+2. Create a branch named after what you're adding, e.g. `add-sqlite3` or `fix-curl-version`
+3. Add your files under `libraries/libname/` following the bundle structure above
 4. Update `STATUS.md` to reflect the new state of the library you touched
 5. Open a pull request with a short description of what you added and how you tested it
 

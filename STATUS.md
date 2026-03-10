@@ -1,4 +1,4 @@
-# fb-lib-archive — Library Status
+﻿# fb-lib-archive — Library Status
 
 > **FreeBASIC target:** 1.10.1 — all bundles live under `libraries/freebasic-1-10-1/`
 >
@@ -44,7 +44,7 @@
 | libjpeg | ❓ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Raylib | ❓ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | SDL 1.x | ❓ | ⬜ | ❌ | ⬜ | ⬜ | ⬜ |
-| SDL 2.x | ❓ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| SDL 2.x (suite) | 2.0.14 | ✅ | ✅ | ⬜ | ⬜ | ✅ |
 | TinyPTC | ❓ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | GDK / GDK-PixBuf | ❓ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
